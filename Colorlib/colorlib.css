@@ -1,0 +1,35 @@
+#i1
+{
+background:rgb(38,38,38);
+ margin:auto;
+ width:450px;
+ height:850px;
+padding:10px 10px 10px 20px;
+ color:rgb(68,68,68);
+ }
+#but1
+{
+font-size:20px;
+margin-left:163px;
+}
+
+#form1
+{width:400px;
+
+background:rgb(38,38,38);
+ text-align:left;
+}
+
+main
+{background:white;
+height:1000px;
+padding-top:10px;
+text-align:left;
+padding-left:90px;
+}    
+    
+    
+    
+box-shadow: 10px 10px 5px #FF1F; 
+
+background:rgb(38,38,38);

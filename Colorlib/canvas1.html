@@ -1,0 +1,701 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<style>
+		#canvas1
+		{margin-left:120px;
+		 margin-top:30px;
+		 
+		}
+		#canvas2
+		{margin-left:100px;
+ 		 margin-top:30px;
+		
+		}
+
+		#canvas3
+		{margin-left:170px;
+		 margin-top:30px;
+		}
+
+
+		#canvas4
+		{margin-left:120px;
+		 margin-top:30px;
+
+		}
+		#mycanvas
+		{margin-left:120px;
+		 margin-top:30px;
+
+		}
+
+		#mycanvas1
+		{margin-left:10px;
+		 margin-top:30px;
+
+		}
+		#mycanvas3
+		{margin-left:10px;
+		 margin-top:30px;
+
+		}
+		#mycanvas2
+		{margin-left:120px;
+		 margin-top:30px;
+
+		}
+	</style>
+</head>
+<body>
+
+<h1 style="margin-left: 120px;">Canvas Demo</h1>
+<canvas id="canvas1" width="500" height="350" style="border:5px   solid  rgb(190,190,190);"></canvas>
+<canvas id="canvas2" width="500" height="350" style="border:5px  solid  rgb(190,190,190);"></canvas>
+<canvas id="canvas3" width="1000" height="650" style="border:5px  solid  rgb(190,190,190);"></canvas><br>
+
+<canvas id="canvas4" width="1110" height="350" style="border:5px  solid  rgb(190,190,190);"></canvas><br>
+
+<script type = "text/javascript">
+var canvas = document.getElementById("canvas1");
+var ctx1 = canvas.getContext("2d");
+ctx1.beginPath();
+
+//ctx1.strokeRect(10,10,100,100);  
+ctx1.closePath();
+ctx1.beginPath();
+
+//arc
+ctx1.shadowBlur=20;
+ctx1.shadowColor='#663300';
+ctx1.fillStyle='rgb(13,53,107)';
+
+ctx1.arc(150,215,80,0,360);
+ctx1.fill();
+ctx1.stroke();
+
+ctx1.shadowBlur=20;
+ctx1.shadowColor='#663300';
+ctx1.fillStyle='red';
+ctx1.fillRect(150,20,100,80);
+
+ctx1.beginPath();
+ctx1.moveTo(30, 30);
+ctx1.lineTo(30, 90);
+ctx1.lineTo(90, 90);
+ctx1.closePath();
+ 
+// the outline
+ctx1.lineWidth = 10;
+ctx1.strokeStyle = '#666666';
+ctx1.stroke();
+ 
+// the fill color
+ctx1.fillStyle = "#FFCC00";
+ctx1.fill();
+
+
+ctx1.closePath();
+
+ctx1.beginPath();
+
+ctx1.shadowBlur=0;
+ctx1.shadowColor='white';
+
+ctx1.lineWidth = 5;
+ctx1.strokeStyle = "steelblue";
+ctx1.moveTo(10,120);
+ctx1.lineTo(300,120);
+
+ctx1.stroke();
+ctx1.closePath();
+</script>
+
+
+<script>
+var c2=document.getElementById("canvas2");
+var cx2=c2.getContext("2d");
+cx2.beginPath();
+var radg=cx2.createLinearGradient(0,0,300,0);
+radg.addColorStop(0,"red");
+radg.addColorStop(0.5,"blue");
+radg.addColorStop(1,"yellow");
+cx2.fillStyle=radg;
+cx2.fillRect(50,50,400,200);
+
+
+cx2.closePath();
+/*cx2.beginPath();
+var radg1=cx2.createRadialGradient(100,100,30,100,100,50);
+radg1.addColorStop(0,"red");
+radg1.addColorStop(0.5,"green");
+radg1.addColorStop(1,"yellow");
+cx2.fillStyle=radg1;
+cx2.fillRect(10,10,400,200);
+cx2.closePath();*/
+</script>
+
+
+<script>
+		
+		window.onload=function(){
+		var a=document.getElementById("canvas3");
+		var a1=a.getContext("2d");
+		var imgo=new Image();
+		imgo.onload=function()
+		{a1.drawImage(imgo,200,30);
+		};
+		
+imgo.src="img.jpg";
+		//a1.closePath();
+		};
+</script>
+
+
+
+<script>
+var c = document.getElementById("canvas4");
+var ctx = c.getContext("2d");
+
+ctx.font = "20px Georgia";
+ctx.fillText("Canvas Text Demo", 10, 50);
+
+ctx.font = "30px Verdana";
+// Create gradient
+var gradient = ctx.createLinearGradient(0, 0, c.width, 0);
+gradient.addColorStop("0", "magenta");
+gradient.addColorStop("0.5", "blue");
+gradient.addColorStop("1.0", "red");
+// Fill with gradient
+ctx.fillStyle = gradient;
+
+ctx.fillText("I eat pizza casue you're what you eat and I want to be the best  ", 10, 90);
+ctx.fillText("thing ever.", 10, 120);
+
+
+</script>
+
+<script>
+
+
+
+var c = document.getElementById("mycanvas");
+var ctx = c.getContext("2d");
+
+ctx.beginPath();
+
+ctx.moveTo(110, 400);
+
+
+
+ctx.arc(125,365,15,1*Math.PI,1.5*Math.PI);
+ctx.stroke();
+
+ctx.moveTo(125, 350);
+ctx.lineTo(165, 350);
+ctx.lineTo(200, 300);
+ctx.lineTo(450, 300);
+ctx.lineTo(485, 350);
+ctx.lineTo(545, 350);
+ctx.strokeStyle = "black";
+
+ctx.stroke();
+
+ctx.fillStyle = "rgb(255,191,0)";
+ctx.fill();
+
+ctx.arc(545,365,15,1.5*Math.PI,0);
+
+ctx.lineTo(560, 400);
+
+ctx.lineTo(435, 400);
+ctx.stroke();
+
+ctx.fillStyle = "rgb(255,191,0)";
+ctx.fill();
+ctx.closePath();
+
+//2nd
+
+ctx.beginPath();
+ctx.arc(410,400,25,0,2*Math.PI);
+ctx.stroke();
+ctx.fillStyle = "rgb(0,0,0)";
+ctx.fill();
+
+ctx.closePath();
+
+
+
+//2nd
+
+ctx.beginPath();
+ctx.arc(240,400,20,0,2*Math.PI);
+ctx.stroke();
+ctx.fillStyle = "rgb(0,0,0)";
+ctx.fill();
+
+ctx.closePath();
+
+ctx.beginPath();
+ctx.moveTo(385, 400);
+ctx.lineTo(110, 400);
+
+ctx.lineTo(125, 350);
+
+ctx.lineTo(385, 350);
+ctx.stroke();
+
+ctx.fillStyle = "rgb(255,191,0)";
+ctx.fill();
+ctx.moveTo(215, 400);
+ctx.lineTo(110, 400);
+
+ctx.fillStyle = "rgb(255,191,0)";
+ctx.fill();
+
+ctx.closePath();
+
+ctx.beginPath();
+ctx.arc(240,400,25,0,2*Math.PI);
+ctx.stroke();
+ctx.fillStyle = "rgb(33,26,35)";
+ctx.fill();
+
+ctx.closePath();
+
+
+ctx.beginPath();
+ctx.arc(410,400,20,0,2*Math.PI);
+ctx.fillStyle = "rgb(33,26,35)";
+ctx.fill();
+ctx.stroke();
+
+ctx.closePath();
+
+
+
+ctx.beginPath();
+ctx.moveTo(325, 300);
+ctx.lineTo(325, 400);
+ctx.stroke();
+
+ctx.fillStyle = "rgb(255,191,0)";
+ctx.fill();
+ctx.closePath();
+
+
+ctx.beginPath();
+ctx.moveTo(210, 310);
+ctx.lineTo(315, 310);
+ctx.lineTo(315, 350);
+ctx.lineTo(180, 350);
+ctx.lineTo(210, 310);
+
+ctx.stroke();
+ctx.fillStyle = "rgb(77,89,87)";
+ctx.fill();
+
+ctx.closePath();
+
+ctx.beginPath();
+ctx.moveTo(340, 310);
+ctx.lineTo(440, 310);
+ctx.lineTo(470, 350);
+ctx.lineTo(340, 350);
+ctx.lineTo(340, 310);
+
+ctx.stroke();
+ctx.fillStyle = "rgb(77,89,87)";
+ctx.fill();
+
+ctx.closePath();
+ctx.rotate(20*Math.PI/180);
+
+</script>
+
+<script>
+
+</script>
+<script>
+
+
+
+var c = document.getElementById("mycanvas1");
+var ctx = c.getContext("2d");
+
+ctx.beginPath();
+ctx.rotate(10*Math.PI/180);
+ctx.moveTo(110, 400);
+
+
+
+ctx.arc(125,365,15,1*Math.PI,1.5*Math.PI);
+ctx.stroke();
+
+ctx.moveTo(125, 350);
+ctx.lineTo(165, 350);
+ctx.lineTo(200, 300);
+ctx.lineTo(450, 300);
+ctx.lineTo(485, 350);
+ctx.lineTo(545, 350);
+ctx.strokeStyle = "black";
+
+ctx.stroke();
+
+ctx.arc(545,365,15,1.5*Math.PI,0);
+
+ctx.lineTo(560, 400);
+
+ctx.lineTo(435, 400);
+ctx.stroke();
+
+ctx.closePath();
+
+
+
+ctx.beginPath();
+ctx.arc(410,400,25,0,2*Math.PI);
+ctx.stroke();
+ctx.fillStyle = "rgb(0,0,0)";
+ctx.fill();
+
+ctx.closePath();
+
+ctx.beginPath();
+ctx.arc(410,400,20,0,2*Math.PI);
+ctx.stroke();
+ctx.fillStyle = "rgb(33,26,35)";
+ctx.fill();
+
+ctx.closePath();
+
+ctx.beginPath();
+ctx.moveTo(385, 400);
+ctx.lineTo(265, 400);
+ctx.stroke();
+
+ctx.closePath();
+
+
+ctx.beginPath();
+ctx.arc(240,400,25,0,2*Math.PI);
+ctx.stroke();
+ctx.fillStyle = "rgb(0,0,0)";
+ctx.fill();
+
+ctx.closePath();
+
+
+ctx.beginPath();
+ctx.arc(240,400,20,0,2*Math.PI);
+ctx.stroke();
+ctx.fillStyle = "rgb(33,26,35)";
+ctx.fill();
+
+ctx.closePath();
+
+
+ctx.beginPath();
+ctx.moveTo(215, 400);
+ctx.lineTo(110, 400);
+ctx.stroke();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.moveTo(325, 300);
+ctx.lineTo(325, 400);
+ctx.stroke();
+ctx.closePath();
+
+
+ctx.beginPath();
+ctx.moveTo(210, 310);
+ctx.lineTo(315, 310);
+ctx.lineTo(315, 350);
+ctx.lineTo(180, 350);
+ctx.lineTo(210, 310);
+
+ctx.stroke();
+ctx.fillStyle = "rgb(77,89,87)";
+ctx.fill();
+
+ctx.closePath();
+
+ctx.beginPath();
+ctx.moveTo(340, 310);
+ctx.lineTo(440, 310);
+ctx.lineTo(470, 350);
+ctx.lineTo(340, 350);
+ctx.lineTo(340, 310);
+
+ctx.stroke();
+ctx.fillStyle = "rgb(77,89,87)";
+ctx.fill();
+
+ctx.closePath();
+
+
+</script>
+
+
+<script>
+
+
+
+var c = document.getElementById("mycanvas2");
+var ctx = c.getContext("2d");
+
+ctx.beginPath();
+ctx.translate(-80,20);
+ctx.moveTo(110, 400);
+
+
+
+ctx.arc(125,365,15,1*Math.PI,1.5*Math.PI);
+ctx.stroke();
+
+ctx.moveTo(125, 350);
+ctx.lineTo(165, 350);
+ctx.lineTo(200, 300);
+ctx.lineTo(450, 300);
+ctx.lineTo(485, 350);
+ctx.lineTo(545, 350);
+ctx.strokeStyle = "black";
+
+ctx.stroke();
+
+ctx.arc(545,365,15,1.5*Math.PI,0);
+
+ctx.lineTo(560, 400);
+
+ctx.lineTo(435, 400);
+ctx.stroke();
+
+ctx.closePath();
+
+
+
+ctx.beginPath();
+ctx.arc(410,400,25,0,2*Math.PI);
+ctx.stroke();
+ctx.fillStyle = "rgb(0,0,0)";
+ctx.fill();
+
+ctx.closePath();
+
+
+ctx.beginPath();
+ctx.arc(410,400,20,0,2*Math.PI);
+ctx.stroke();
+ctx.fillStyle = "rgb(33,26,35)";
+ctx.fill();
+
+ctx.closePath();
+
+ctx.beginPath();
+ctx.moveTo(385, 400);
+ctx.lineTo(265, 400);
+ctx.stroke();
+
+ctx.closePath();
+
+
+ctx.beginPath();
+ctx.arc(240,400,25,0,2*Math.PI);
+ctx.stroke();
+ctx.fillStyle = "rgb(0,0,0)";
+ctx.fill();
+
+ctx.closePath();
+
+
+ctx.beginPath();
+ctx.arc(240,400,20,0,2*Math.PI);
+ctx.stroke();
+ctx.fillStyle = "rgb(33,26,35)";
+ctx.fill();
+
+ctx.closePath();
+
+
+ctx.beginPath();
+ctx.moveTo(215, 400);
+ctx.lineTo(110, 400);
+ctx.stroke();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.moveTo(325, 300);
+ctx.lineTo(325, 400);
+ctx.stroke();
+ctx.closePath();
+
+
+ctx.beginPath();
+ctx.moveTo(210, 310);
+ctx.lineTo(315, 310);
+ctx.lineTo(315, 350);
+ctx.lineTo(180, 350);
+ctx.lineTo(210, 310);
+
+ctx.stroke();
+ctx.fillStyle = "rgb(77,89,87)";
+ctx.fill();
+
+ctx.closePath();
+
+ctx.beginPath();
+ctx.moveTo(340, 310);
+ctx.lineTo(440, 310);
+ctx.lineTo(470, 350);
+ctx.lineTo(340, 350);
+ctx.lineTo(340, 310);
+
+ctx.stroke();
+ctx.fillStyle = "rgb(77,89,87)";
+ctx.fill();
+
+ctx.closePath();
+
+
+</script>
+<script>
+
+
+
+var c = document.getElementById("mycanvas3");
+var ctx = c.getContext("2d");
+
+ctx.beginPath();
+ctx.translate(-80,0);
+
+ctx.moveTo(110, 400);
+
+
+
+ctx.arc(125,365,15,1*Math.PI,1.5*Math.PI);
+ctx.stroke();
+ctx.moveTo(125, 350);
+ctx.lineTo(165, 350);
+ctx.lineTo(200, 300);
+ctx.lineTo(450, 300);
+ctx.lineTo(485, 350);
+ctx.lineTo(545, 350);
+ctx.strokeStyle = "black";
+ctx.stroke();
+
+ctx.arc(545,365,15,1.5*Math.PI,0);
+
+ctx.lineTo(560, 400);
+
+ctx.lineTo(435, 400);
+ctx.stroke();
+
+ctx.arc(410,400,25,0,2*Math.PI);
+ctx.stroke();
+ctx.arc(410,400,20,0,2*Math.PI);
+ctx.stroke();
+ctx.moveTo(385, 400);
+ctx.lineTo(265, 400);
+ctx.stroke();
+ctx.arc(240,400,25,0,2*Math.PI);
+ctx.stroke();
+ctx.arc(240,400,20,0,2*Math.PI);
+ctx.stroke();
+ctx.moveTo(215, 400);
+ctx.lineTo(110, 400);
+ctx.stroke();
+ctx.moveTo(325, 300);
+ctx.lineTo(325, 400);
+ctx.stroke();
+ctx.moveTo(210, 310);
+ctx.lineTo(315, 310);
+ctx.lineTo(315, 350);
+ctx.lineTo(180, 350);
+ctx.lineTo(210, 310);
+
+ctx.stroke();
+ctx.moveTo(340, 310);
+ctx.lineTo(440, 310);
+ctx.lineTo(470, 350);
+ctx.lineTo(340, 350);
+ctx.lineTo(340, 310);
+
+ctx.stroke();
+ctx.scale(2,2);
+
+
+
+
+ctx.moveTo(110, 400);
+
+
+
+ctx.arc(125,365,15,1*Math.PI,1.5*Math.PI);
+ctx.stroke();
+ctx.moveTo(125, 350);
+ctx.lineTo(165, 350);
+ctx.lineTo(200, 300);
+ctx.lineTo(450, 300);
+ctx.lineTo(485, 350);
+ctx.lineTo(545, 350);
+ctx.strokeStyle = "black";
+ctx.stroke();
+
+ctx.arc(545,365,15,1.5*Math.PI,0);
+
+ctx.lineTo(560, 400);
+
+ctx.lineTo(435, 400);
+ctx.stroke();
+
+ctx.arc(410,400,25,0,2*Math.PI);
+ctx.stroke();
+
+ctx.arc(410,400,20,0,2*Math.PI);
+ctx.stroke();
+ctx.moveTo(385, 400);
+ctx.lineTo(265, 400);
+ctx.stroke();
+
+ctx.arc(240,400,25,0,2*Math.PI);
+ctx.stroke();
+
+ctx.arc(240,400,20,0,2*Math.PI);
+ctx.stroke();
+//ctx.fillStyle = "rgb(33,26,35)";
+//ctx.fill();
+
+ctx.moveTo(215, 400);
+ctx.lineTo(110, 400);
+ctx.stroke();
+ctx.moveTo(325, 300);
+ctx.lineTo(325, 400);
+ctx.stroke();
+
+ctx.moveTo(210, 310);
+ctx.lineTo(315, 310);
+ctx.lineTo(315, 350);
+ctx.lineTo(180, 350);
+ctx.lineTo(210, 310);
+
+ctx.stroke();
+
+ctx.closePath();
+ctx.beginPath();
+ctx.moveTo(340, 310);
+ctx.lineTo(440, 310);
+ctx.lineTo(470, 350);
+ctx.lineTo(340, 350);
+ctx.lineTo(340, 310);
+ctx.fillStyle = "rgb(77,89,87)";
+ctx.fill();
+
+ctx.stroke();
+
+</script>
+
+</body>
+
+</html>
